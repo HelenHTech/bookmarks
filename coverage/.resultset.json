@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/helen.hayward/Documents/Makers/bookmarks/spec/bookmark_spec.rb": [
+      "/Users/student/Documents/Week6_DB/bookmarks/spec/bookmark_spec.rb": [
         1,
         null,
         1,
@@ -24,7 +24,7 @@
         null,
         null
       ],
-      "/Users/helen.hayward/Documents/Makers/bookmarks/spec/features/app_spec.rb": [
+      "/Users/student/Documents/Week6_DB/bookmarks/spec/features/app_spec.rb": [
         1,
         null,
         1,
@@ -49,8 +49,6 @@
         1,
         1,
         1,
-        1,
-        1,
         null,
         null,
         null,
@@ -66,6 +64,22 @@
         null,
         null,
         null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
         1,
         1,
         1,
@@ -80,6 +94,6 @@
         null
       ]
     },
-    "timestamp": 1559825620
+    "timestamp": 1559833730
   }
 }

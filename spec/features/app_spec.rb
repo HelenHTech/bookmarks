@@ -19,10 +19,8 @@ end
 feature 'Adding Bookmarks' do
   scenario 'User to add bookmark via form' do
     PG.connect(dbname: 'bookmark_manager_test')
+    Bookmark.create([title: 'Cinema'], [bookmark_url: 'http://www.odeon.com'])
     visit('/bookmarks')
-    fill_in :title, with: 'Cinema'
-    fill_in :bookmark_url, with: 'http://www.odeon.com'
-    click_on :Submit
     expect(page).to have_content 'Cinema'
   end
 end
@@ -50,4 +48,20 @@ feature 'Deleting Bookmarks' do
     click_on :Delete
     expect(page).not_to have_content 'River Island'
   end
+end
+
+
+feature 'Updating Bookmarks' do
+    scenario 'Update a bookmark by changing the url' do
+      PG.connect(dbname: 'bookmark_manager_test')
+      visit('/bookmarks')
+      fill_in :title, with: 'River Island'
+      fill_in :bookmark_url, with: 'http://www.riverisland.com'
+      click_on :Submit
+      fill_in :bookmark_to_update, with: 'River Island'
+      fill_in :title_update, with: 'Island River'
+      fill_in :url_update, with: 'http://www.riverisland.co.uk'
+      click_on :Update
+      expect(page).to have_content 'Island River'
+    end
 end
