@@ -38,3 +38,16 @@ feature 'Follow Title Link' do
     expect(page.current_url).to eq 'http://www.odeon.com/'
   end
 end
+
+feature 'Deleting Bookmarks' do
+  scenario 'Deleting a bookmark' do
+    PG.connect(dbname: 'bookmark_manager_test')
+    visit('/bookmarks')
+    fill_in :title, with: 'River Island'
+    fill_in :bookmark_url, with: 'http://www.riverisland.com'
+    click_on :Submit
+    fill_in :title_delete, with: 'River Island'
+    click_on :Delete
+    expect(page).not_to have_content 'River Island'
+  end
+end
